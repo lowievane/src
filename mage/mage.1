@@ -1,0 +1,106 @@
+.TH MAGE 1 mage\-VERSION
+.SH NAME
+mage \- image viewer
+.SH SYNOPSIS
+.B mage
+.RB [ \-fhpqrv ]
+.RB [ \-s
+.IR scalemode ]
+.RB [ \-n
+.IR class ]
+.RI [ "file \- directory ..." ]
+.SH DESCRIPTION
+.B mage
+is an image viewer for X, heavily inspired by
+.BR sxiv(1)
+image operations. Made it to be simple to tweak to add a feature you
+may wish, since by default it offers some 'basics' operations.
+.P
+.SH OPTIONS
+When
+.I file
+is
+.B \-
+, read standard input.
+.TP
+.B \-f
+Starts the window in fullscreen.
+.TP
+.B \-h
+Prints the usage and exits.
+.TP
+.B \-p
+Pixelate images.
+.TP
+.B \-q
+Quiet. Does not print different warnings, whether it's ignoring a directory because it's missing the
+.I \-r
+flag or whether the file isn't an image or doesn't exist, etc.
+.TP
+.B \-r
+True recursiveness. If the argument is a directory, mage by default will not load sub-directories (similar to what
+.I find -maxdepth 1
+does), unless you specify otherwise.
+.TP
+.B \-v
+Prints the version and exits.
+.TP
+.BI \-s " scalemode"
+Will set the scaling mode to
+.IR scalemode ,
+supported modes are: down, fit, width and height.
+.TP
+.BI \-n " class"
+Will set the WM_CLASS attribute to
+.IR name .
+.SH USAGE
+Keybindings are defined on config.h, below are default bindings.
+.TP
+.B b
+Toggles the bar.
+.TP
+.B Space, BackSpace
+Moves to the next/prev image.
+.TP
+.B Equal, Minus
+Adds/decrease zoom, default steps are +/\-12.5.
+.TP
+.B Plus
+Sets the zoom to a 100.
+.TP
+.B f
+Toggles fullscreen.
+.TP
+.B h/j/k/l
+Pan while the image is bigger than the window (zoommed).
+.TP
+.B Shift\-,
+Rotate image 90 degrees right.
+.TP
+.B Shift\-.
+Rotate image 90 degrees left.
+.TP
+.B backslash
+Cycles scale modes +1.
+.TP
+.B Shitft\-backslash
+Cycles scale modes -1.
+.TP
+.B s
+Saves the state of the current 'image buffer' into the 'real image' (e.g if you rotate the image it won't get overwritten into the actual file).
+.TP
+.B r
+Reloads the current image.
+.TP
+.B u
+Vertically flips the image.
+.TP
+.B ShiftMask\-u
+Horizontally flips the image.
+.TP
+.B g/G
+Go to the first/last image.
+.SH SEE ALSO
+.IR feh (1),
+.IR imv (1),
+.IR sxiv (1)
