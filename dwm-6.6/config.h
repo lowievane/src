@@ -91,6 +91,7 @@ static const Key keys[] = {
 	{ 0,                XF86XK_AudioPlay,	   spawn,	   SHCMD ("/home/lowie/.local/bin/audpause")},
 	{ 0,                XF86XK_AudioPrev,	   spawn,	   SHCMD ("/home/lowie/.local/bin/audprev")},
 	{ 0,                XF86XK_AudioNext,	   spawn,	   SHCMD ("/home/lowie/.local/bin/audnext")},
+	{ MODKEY,                       XK_v,	   spawn,          SHCMD ("/home/lowie/.local/bin/copyq-dmenu")},
 	{ MODKEY,                       XK_w,	   spawn,          SHCMD ("waterfox")},
 	{ MODKEY,                       XK_s,	   spawn,          SHCMD ("spotify")},
 	{ MODKEY,                       XK_x,	   spawn,          SHCMD ("slock & sleep .5; xset dpms force off")},
