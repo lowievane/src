@@ -14,7 +14,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray             = 1;   /* 0 means no systray */
-static const char *fonts[]          = { "monospace:size=14" };
+static const char *fonts[]          = { "monospace:size=14", "FontAwesome:size=14" };
 static const char dmenufont[]       = "monospace:size=14";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -84,7 +84,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+        { MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ 0,         XF86XK_AudioLowerVolume,	   spawn,	   SHCMD ("/home/lowie/.local/bin/downvol")},
 	{ 0,         XF86XK_AudioRaiseVolume,	   spawn,	   SHCMD ("/home/lowie/.local/bin/upvol")},
 	{ 0,                XF86XK_AudioMute,	   spawn,	   SHCMD ("/home/lowie/.local/bin/mutevol")},
@@ -97,6 +97,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_x,	   spawn,          SHCMD ("slock & sleep .5; xset dpms force off")},
 	{ MODKEY,                       XK_e,	   spawn,          SHCMD ("pcmanfm")},
 	{ MODKEY,                       XK_n,	   spawn,          SHCMD ("st -e newsboat")},
+	{ MODKEY|ShiftMask,             XK_l,	   spawn,          SHCMD ("remmina --enable-fullscreen -c '/home/lowie/.local/share/remmina/group_rdp_skikk_192-168-178-108.remmina'")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -105,7 +106,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,	   view,           {0} },
+	{ MODKEY,                       XK_grave,  view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
@@ -115,9 +116,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	//{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_Tab,	   focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	//{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Tab,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
