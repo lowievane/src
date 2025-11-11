@@ -97,6 +97,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_x,	   spawn,          SHCMD ("slock & sleep .5; xset dpms force off")},
 	{ MODKEY,                       XK_e,	   spawn,          SHCMD ("pcmanfm")},
 	{ MODKEY,                       XK_n,	   spawn,          SHCMD ("st -e newsboat")},
+	{ MODKEY,                       XK_c,	   spawn,          SHCMD ("st -e bc -ql")},
 	{ MODKEY|ShiftMask,             XK_l,	   spawn,          SHCMD ("remmina --enable-fullscreen -c '/home/lowie/.local/share/remmina/group_rdp_skikk_192-168-178-108.remmina'")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
